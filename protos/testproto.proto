@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+package testPackage;
+
+service testService {
+  rpc testTrigger (testIn) returns (testOut) {}
+}
+
+message testIn {
+  string name = 1;
+}
+
+message testOut {
+  string message = 1;
+  int32 number = 2;
+}
