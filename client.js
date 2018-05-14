@@ -6,7 +6,7 @@ const PROTO_PATH = path.join(__dirname, '/protos/testproto.proto');
 const testProto = grpc.load(PROTO_PATH).testPackage;
 
 const app = () => {
-  let client = new testProto.testService('localhost:50051', var ssl_creds = grpc.credentials.createSsl());
+  let client = new testProto.testService('localhost:50051', grpc.credentials.createInsecure());
   let user;
   if (process.argv.length >= 3) {
     user = process.argv[2];
